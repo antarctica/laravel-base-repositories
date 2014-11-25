@@ -1,6 +1,6 @@
 <?php
 
-namespace Lions\Repository;
+namespace Antarctica\LaravelBaseRepositories\Repository;
 
 interface BaseRepositoryInterface {
 

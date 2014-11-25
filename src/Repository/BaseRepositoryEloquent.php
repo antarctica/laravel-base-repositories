@@ -1,6 +1,6 @@
 <?php
 
-namespace Lions\Repository;
+namespace Antarctica\LaravelBaseRepositories\Repository;
 
 abstract class BaseRepositoryEloquent {
 
