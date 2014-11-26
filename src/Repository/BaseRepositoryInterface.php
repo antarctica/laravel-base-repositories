@@ -14,8 +14,8 @@ interface BaseRepositoryInterface {
     /**
      * Create new record/entity from $input
      *
-     * @param $input
+     * @param array $input
      * @return mixed
      */
-    public function create($input);
+    public function create(Array $input);
 }
