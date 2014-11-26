@@ -15,10 +15,23 @@ abstract class BaseRepositoryEloquent {
     }
 
     /**
+     * Return all entity
+     *
      * @return mixed
      */
     public function all()
     {
         return $this->model->all();
+    }
+
+    /**
+     * Create new entity from $input
+     *
+     * @param array $input
+     * @return mixed
+     */
+    public function create(Array $input)
+    {
+        return $this->model->create($input);
     }
 }
