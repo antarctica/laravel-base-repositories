@@ -10,7 +10,7 @@ Require this package in your `composer.json` file:
 
     {
         "require-dev": {
-            "antarctica/laravel-base-repositories": "dev-master"
+            "antarctica/laravel-base-repositories": "dev-develop"
         }
     }
     
