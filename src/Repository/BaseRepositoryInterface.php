@@ -12,6 +12,12 @@ interface BaseRepositoryInterface {
     public function all();
 
     /**
+     * @param string $id
+     * @return array
+     */
+    public function find($id);
+
+    /**
      * Create new record/entity from $input
      *
      * @param array $input

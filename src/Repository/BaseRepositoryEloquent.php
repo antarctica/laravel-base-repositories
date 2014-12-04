@@ -25,6 +25,15 @@ abstract class BaseRepositoryEloquent {
     }
 
     /**
+     * @param string $id
+     * @return array
+     */
+    public function find($id)
+    {
+        return $this->model->findOrFail($id)->toArray();
+    }
+
+    /**
      * Create new entity from $input
      *
      * @param array $input
