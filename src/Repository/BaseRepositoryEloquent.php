@@ -21,7 +21,7 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
      */
     public function all()
     {
-        return $this->model->all()-toArray();
+        return $this->model->all()->toArray();
     }
 
     /**
