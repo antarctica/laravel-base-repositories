@@ -24,4 +24,10 @@ interface BaseRepositoryInterface {
      * @return mixed
      */
     public function create(Array $input);
+
+    /**
+     * @param string $id
+     * @return mixed
+     */
+    public function delete($id);
 }

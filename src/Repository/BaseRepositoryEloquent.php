@@ -2,7 +2,7 @@
 
 namespace Antarctica\LaravelBaseRepositories\Repository;
 
-abstract class BaseRepositoryEloquent {
+abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
 
     protected $model;
 
@@ -42,5 +42,17 @@ abstract class BaseRepositoryEloquent {
     public function create(Array $input)
     {
         return $this->model->create($input);
+    }
+
+    /**
+     * @param $id
+     * @return bool
+     * @throws \Exception
+     */
+    public function delete($id)
+    {
+        $this->model->find($id)->delete();
+
+        return true;
     }
 }
