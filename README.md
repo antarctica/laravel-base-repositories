@@ -9,7 +9,7 @@ Require this package in your `composer.json` file:
 ```json
 {
 	"require-dev": {
-		"antarctica/laravel-base-repositories": "0.*"
+		"antarctica/laravel-base-repositories": "~0.2"
 	}
 }
 ```
@@ -29,6 +29,14 @@ Where a repository needs more specialised methods, to suit its particular needs,
 Essentially this base interface is designed to provide the most common functionality that will almost certainly be needed.
 
 See `BaseRepositoryInterface.php` for the specific methods this interface requires, each is documented inline using PHP DocBlocks.
+
+##### Return types
+
+In order to provide as neutral an interface as possible, data **MUST** be returned as **PHP standard arrays**.
+
+This is to ensure implementations remain interoperable with each other by using a lowest common denominator approach.
+
+This is specified within the implementation through type hinted DocBlock properties. However these rely on a either manual validation or features provided by your editor to be enforced.
 
 #### Basic usage (Laravel)
 
@@ -50,17 +58,17 @@ This class uses a given Eloquent model to implement the required repository meth
 
 E.g. the `all()` method returns `$this->model->all();` without any default where clauses, sorting etc.
 
-This provides a neutral base which more targeted specific classes can extend to target the methods they need, rather than implementing of the required methods that may be no different than normal.
-
-**In order to provide as neutral an interface as possible results resources are returned as PHP standard arrays, not as Eloquent objects.**
-
-E.g. to access an *id* property call `$model['id']` rather than `$model->id`.
-
-Although this  data structure is less clever and expressive compared to an Eloquent model, it is much more interoperable with implementations that don't use Eloquent (such as a CSV based implementation for example).
-
 Essentially this base implementation is designed to prevent you having to write implementations for basic functions (such as delete) to allow you to focus on the cases where you need custom functionality.
 
+This provides a neutral base which more targeted specific classes can extend to target the methods they need, rather than implementing of the required methods that may be no different than normal.
+
 See `BaseRepositoryEloquent.php` for details on how each method is implemented, PHP DocBlocks are used to document each method inline.
+
+#### Return types
+
+To ensure all methods return data in the format data type/structure a common `export()` method is used. This method accepts data in a variety of types (such as an Eloquent collection) and provides functionality to convert these complex data structures into a standard array.
+
+It is possible to extend this function (currently only by replacement) to add support for other input types as needed.
 
 #### Basic usage (Laravel)
 

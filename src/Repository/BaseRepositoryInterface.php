@@ -5,13 +5,16 @@ namespace Antarctica\LaravelBaseRepositories\Repository;
 interface BaseRepositoryInterface {
 
     /**
-     * Return all records/entities
+     * Return all records/entities according to optional $options
      *
-     * @return mixed
+     * @param array $options
+     * @return array
      */
-    public function all();
+    public function all(array $options = []);
 
     /**
+     * Return a single record/entity specified by an $id
+     *
      * @param string $id
      * @return array
      */
@@ -21,13 +24,15 @@ interface BaseRepositoryInterface {
      * Create new record/entity from $input
      *
      * @param array $input
-     * @return mixed
+     * @return array
      */
     public function create(Array $input);
 
     /**
+     * Delete record/entity specified by an $id
+     *
      * @param string $id
-     * @return mixed
+     * @return bool
      */
     public function delete($id);
 }
