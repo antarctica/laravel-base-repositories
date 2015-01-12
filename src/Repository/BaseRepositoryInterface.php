@@ -5,11 +5,12 @@ namespace Antarctica\LaravelBaseRepositories\Repository;
 interface BaseRepositoryInterface {
 
     /**
-     * Return all records/entities
+     * Return all records/entities according to optional $options
      *
+     * @param array $options
      * @return array
      */
-    public function all();
+    public function all(array $options = []);
 
     /**
      * Return a single record/entity specified by an $id

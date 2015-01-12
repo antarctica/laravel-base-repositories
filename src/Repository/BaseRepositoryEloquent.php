@@ -15,11 +15,12 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
     }
 
     /**
-     * Return all entity
+     * Return all records/entities according to optional $options
      *
+     * @param array $options
      * @return array
      */
-    public function all()
+    public function all(array $options = [])
     {
         return $this->model->all()->toArray();
     }
