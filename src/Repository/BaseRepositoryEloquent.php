@@ -17,7 +17,7 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
     /**
      * Return all entity
      *
-     * @return mixed
+     * @return array
      */
     public function all()
     {
@@ -25,6 +25,8 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
     }
 
     /**
+     * Return a single record/entity specified by an $id
+     *
      * @param string $id
      * @return array
      */
@@ -34,10 +36,10 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
     }
 
     /**
-     * Create new entity from $input
+     * Create new record/entity from $input
      *
      * @param array $input
-     * @return mixed
+     * @return array
      */
     public function create(Array $input)
     {
@@ -45,6 +47,8 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
     }
 
     /**
+     * Delete record/entity specified by an $id
+     *
      * @param $id
      * @return bool
      * @throws \Exception
