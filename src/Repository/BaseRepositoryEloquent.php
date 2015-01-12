@@ -76,7 +76,7 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
         return true;
     }
 
-    private function export($resultSet)
+    protected function export($resultSet)
     {
         if (is_object($resultSet))
         {
@@ -112,7 +112,7 @@ abstract class BaseRepositoryEloquent implements BaseRepositoryInterface {
      * @param Collection $resultSet
      * @return array
      */
-    private function exportEloquentCollection(Collection $resultSet)
+    protected function exportEloquentCollection(Collection $resultSet)
     {
         return [
             'data' => $resultSet->toArray()
